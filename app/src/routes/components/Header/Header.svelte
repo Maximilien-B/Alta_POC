@@ -9,10 +9,12 @@
         <div class="header_logo">
 
             <p><span>ELTA</span><br>MUSIC</p>
-
+            <svg viewBox="0 0 2 3" aria-hidden="true">
+                <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+            </svg>
         </div>
         <div class="header_links">
-            <p>products</p>
+            <p class="active_page">products</p>
             <p>shop</p>
             <p>retailers</p>
             <p>discontinued</p>

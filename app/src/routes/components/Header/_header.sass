@@ -14,13 +14,17 @@
 
 .header_logo
   height: 100%
-  background-color: v.$tertiary-color
-  width: v.$default-size * 2
+  background-color: v.$secondary-color
+  width: v.$default-size * 3
   display: flex
-  justify-content: center
+  justify-content: space-between
   align-items: center
   text-align: center
+  svg
+    height: 100%
+    transform: translateX(1px)
   p
+    margin-left: v.$small-size
     span
       font-size: v.$large-font-size
 
@@ -35,7 +39,9 @@
   gap: v.$small-size
   border-radius: v.$small-size
   height: 100%
+
   p
+    cursor: pointer
     margin-left: v.$small-size
     margin-right: v.$small-size
 
@@ -52,3 +58,6 @@
   svg
     height: v.$small-size
     width: v.$small-size
+
+.active_page
+  color: v.$tertiary-color
