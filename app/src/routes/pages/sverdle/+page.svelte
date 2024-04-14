@@ -2,12 +2,12 @@
 	import { confetti } from '@neoconfetti/svelte';
 	import { enhance } from '$app/forms';
 
-	import { reduced_motion } from './reduced-motion';
+	import { reduced_motion } from './reduced-motion.js';
 
-	/** @type {import('./$types').PageData} */
+	/** @type {import('../../../../.svelte-kit/types/src/routes').PageData} */
 	export let data;
 
-	/** @type {import('./$types').ActionData} */
+	/** @type {import('../../../../.svelte-kit/types/src/routes').ActionData} */
 	export let form;
 
 	/** Whether or not the user has won */

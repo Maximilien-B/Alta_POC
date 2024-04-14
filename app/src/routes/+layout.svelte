@@ -1,7 +1,11 @@
 <script>
-	import Header from './Header.svelte';
-	import './styles.css';
+	import Header from './components/Header/Header.svelte';
+	import './main.sass'
 </script>
+
+<svelte:head>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</svelte:head>
 
 <div class="app">
 	<Header />
@@ -11,7 +15,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>Test</p>
 	</footer>
 </div>
 
