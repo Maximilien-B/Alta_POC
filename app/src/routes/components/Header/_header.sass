@@ -8,19 +8,47 @@
   flex-direction: row
   justify-content: space-between
   align-items: center
-  height: v.$default-size
+  height: v.$large-size
   width: 100%
   background-color: v.$main-color
 
 .header_logo
-  height: v.$default-size
+  height: 100%
   background-color: v.$tertiary-color
   width: v.$default-size * 2
   display: flex
   justify-content: center
   align-items: center
-  a
-    img
-      height: v.$default-size
+  text-align: center
+  p
+    span
+      font-size: v.$large-font-size
 
 
+.header_links
+  color: v.$secondary-color
+  display: flex
+  text-transform: uppercase
+  justify-content: center
+  align-items: center
+  text-align: center
+  gap: v.$small-size
+  border-radius: v.$small-size
+  height: 100%
+  p
+    margin-left: v.$small-size
+    margin-right: v.$small-size
+
+
+
+.header_right
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+  width: v.$default-size * 2
+  color: v.$secondary-color
+
+  svg
+    height: v.$small-size
+    width: v.$small-size
