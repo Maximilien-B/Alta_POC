@@ -1,0 +1,48 @@
+{
+  "links": [
+    {
+      "name" : "products",
+      "links" : [
+        {
+          "name" : "text 1",
+          "link" : "/"
+        },
+        {
+          "name" : "text 2",
+          "link" : "/"
+        }
+      ]
+    },
+    {
+      "name" : "shop",
+      "links" : [
+        {
+          "name" : "text 1",
+          "link" : "/"
+        }
+      ]
+    },
+    {
+      "name" : "retailers",
+      "links" : []
+    },
+    {
+      "name" : "discontinued",
+      "links" : [
+        {
+          "name" : "text 1",
+          "link" : "/"
+        }
+      ]
+    },
+    {
+      "name" : "about",
+      "links" : [
+        {
+          "name" : "text 1",
+          "link" : "/"
+        }
+      ]
+    }
+  ]
+}
