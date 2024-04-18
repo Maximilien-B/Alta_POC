@@ -15,6 +15,5 @@
 	</main>
 
 	<footer>
-		<p>Test</p>
 	</footer>
 </div>

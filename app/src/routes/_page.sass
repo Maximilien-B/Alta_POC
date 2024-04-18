@@ -5,13 +5,13 @@
 .page
   width: 100%
   margin-top: v.$default-size
-  li
+  section
     margin-bottom: v.$default-size
 
 .header_pvk
   margin-left: v.$default-size
 
-#colored_header_pvk
+.colored_header_pvk
   color: v.$tertiary-color
 
 .presentation_video
@@ -81,4 +81,31 @@
     color: v.$secondary-color
     -webkit-transform: scaleY(-1)
     transform: scaleY(-1)
+
+
+.paragraph_container
+  padding-left: v.$large-size * 3
+  padding-right: v.$large-size * 3
+
+.double_paragraph
+  position: relative
+  margin-left: v.$large-size * 2
+  margin-right: v.$large-size * 2
+
+.left_prgph_container
+  position: absolute
+  left: 0
+  top: 0
+  width: 45%
+  height: 100%
+  p
+    height: 100%
+
+.right_prgph_container
+  position: absolute
+  right: 0
+  top: 0
+  width: 45%
+  height: 100%
+  background-color: v.$main-color
 
