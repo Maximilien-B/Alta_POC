@@ -1,26 +1,27 @@
 @use 'variables' as v
 
-@import "components/Header/header"
+@import "components/Header/header", "page"
 
 @font-face
-  font-family: "Danley"
-  src: url("$lib/fonts/webfonts_Danley/Danley.ttf.woff")
+  font-family: "contm"
+  src: local('Continuum Medium'), local('Continuum Medium'), url("$lib/fonts/webfonts_Continuum-Medium/Continuum-Medium.ttf.woff") format('woff')
 
 p
-  font-weight: 4000
-  font-family: 'Danley', serif
+  font-family: 'contm', serif
   letter-spacing: 2px
   font-size: v.$default-font-size
+
+h1
+  font-family: 'contm', serif
+  letter-spacing: 2px
+  font-size: v.$huge-font-size
 
 a
   font-family: 'Danley', serif
   letter-spacing: 2px
   font-size: v.$default-font-size
   
-body
-  background-image: url('$lib/images/paper-texture.jpg')
-  background-size: cover
-  background-position: center
+
 
 
 *

@@ -86,8 +86,9 @@
   border-bottom-right-radius: 0.3em
   a
     color: black
+
     height: v.$default-size
-    background: rgba(0,0,0,0.02)
+    background: rgba(255,255,255,1)
     text-decoration: none
     display: flex
     justify-content: left
@@ -95,8 +96,9 @@
     transition: 0.3s ease
 
     &:hover
-      background: rgba(0,0,0,0.1)
+      background: rgba(255,255,255,1)
     p
+      margin-left: v.$small-size * 2
       text-transform: lowercase
       transition: color 0.3s ease, background-color 0.3s ease
       &::after
@@ -104,7 +106,7 @@
       &::before
         content: url("$lib/icons/play-fill.svg")
         position: absolute
-        transform: translateX(-170%)
+        transform: translateX(calc( -1em - 100%))
         transition: 0.3s ease
       &:hover::before
         transform: translateX(300%)

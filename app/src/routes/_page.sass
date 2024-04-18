@@ -1,0 +1,84 @@
+@use 'variables' as v
+
+
+
+.page
+  width: 100%
+  margin-top: v.$default-size
+  li
+    margin-bottom: v.$default-size
+
+.header_pvk
+  margin-left: v.$default-size
+
+#colored_header_pvk
+  color: v.$tertiary-color
+
+.presentation_video
+  height: v.$large-size * 5
+  width: 100%
+  position: relative
+  overflow: hidden
+
+
+.sci-fi-bg
+  z-index: -1
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  background-image: url('$lib/images/sci-fi-bg.webp')
+  background-size: cover
+  background-position: center
+  filter: blur(2px)
+
+.dark-filter
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  background-color: rgba(0,0,0,0.9)
+
+
+.top_left_deco
+  position: absolute
+  top: 0
+  left: 0
+  height: v.$default-size
+  display: flex
+  justify-content: center
+  align-items: center
+
+  div
+    height: 100%
+    width: v.$large-size * 3
+    background-color: v.$secondary-color
+
+  svg
+    height: v.$default-size
+    color: v.$secondary-color
+
+.bottom_right_deco
+  position: absolute
+  bottom: 0
+  right: 0
+  height: v.$default-size
+  display: flex
+  justify-content: center
+  align-items: center
+  transform: scaleY ( -1 )
+
+  div
+    height: 100%
+    width: v.$large-size * 3
+    background-color: v.$secondary-color
+
+  svg
+
+    height: v.$default-size
+    color: v.$secondary-color
+    -webkit-transform: scaleY(-1)
+    transform: scaleY(-1)
+

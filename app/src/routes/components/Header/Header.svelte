@@ -26,7 +26,7 @@
                     }} on:mouseleave={()=>{
                         heights[i] = 0
                     }}>
-                        {#if active == i}
+                        {#if active === i}
                             <p class="active_page">{content.name}</p>
                         {:else}
                             <p>{content.name}</p>
