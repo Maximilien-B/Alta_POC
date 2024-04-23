@@ -89,6 +89,7 @@
 
 .double_paragraph
   position: relative
+  height: v.$large-size * 4
   margin-left: v.$large-size * 2
   margin-right: v.$large-size * 2
 
@@ -96,7 +97,7 @@
   position: absolute
   left: 0
   top: 0
-  width: 45%
+  width: 50%
   height: 100%
   p
     height: 100%
@@ -105,7 +106,34 @@
   position: absolute
   right: 0
   top: 0
-  width: 45%
+  width: 50%
   height: 100%
+  p
+    height: 100%
+
+.img_container
   background-color: v.$main-color
 
+.specs_container
+  display: flex
+  gap: v.$default-size
+  height: v.$large-size * 4
+  margin-left: v.$large-size * 2
+  margin-right: v.$large-size * 2
+  li
+    margin-bottom: v.$small-size / 2
+
+.pf3_options
+  width: 50%
+
+.spec_header
+  display: flex
+  justify-content: center
+  align-items: center
+  height: v.$large-size
+  border-bottom: solid black 1px
+  margin-left: v.$large-size * 4
+  margin-right: v.$large-size * 4
+
+.pf3_specs
+  width: 50%

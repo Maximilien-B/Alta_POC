@@ -42,10 +42,43 @@
 					From ethereal drones to pulsating rhythms, the PF3 invites you on a journey of sonic exploration like no other. Its intuitive interface beckons you to dive deep into a world of modulation and harmonics, where every twist of a knob unveils a new sonic landscape. Whether you're a seasoned musician or an aspiring producer, the Polyvox PF3 promises to ignite your imagination and elevate your sound to unprecedented heights. Brace yourself for an auditory adventure that will astonish and inspire.
 				</p>
 			</div>
-			<div class="right_prgph_container"></div>
+			<div class="right_prgph_container img_container"></div>
 		</section>
-		<section>
-
+		<section class="paragraph_container">
+			<h1><span class="colored_header_pvk">Warning!</span></h1>
+			<p>Before using the device, turn it on for 5-7 minutes and let it stand. The control transistor should warm up. So that in SOFT mode there is no feedback when the FREQ knobs are in zero position. If you overdo it. The UD1208 chips used in the filter are very sensitive and are never the same. Therefore you will not mathematically get two identical filters. Which is an advantage when using the unit in stereo. </p>
+		</section>
+		<section class="double_paragraph">
+			<div class="left_prgph_container img_container"></div>
+			<div class="right_prgph_container">
+				<p>
+					available in three stylish colors, this sleek synth offers musicians and producers a versatile tool for sonic exploration. Choose from classic black, maize yellow, dark grey or minimalist white to suit your aesthetic preferences. With its compact design and captivating hues, the Polyvox PF3 adds a touch of sophistication to any studio setup or live performance.
+				</p>
+			</div>
+		</section>
+		<section class="spec_header">
+			<h1><span class="colored_header_pvk">Specifications</span></h1>
+		</section>
+		<section class="specs_container">
+			<div class="pf3_options">
+				<ul>
+					<li><p><span class="colored_header_pvk">ER modes</span> - Lowpass, Bandpass, Hi-pass, Notch.</p></li>
+					<li><p><span class="colored_header_pvk">E generator</span>  - pink, white and channel balancing.</p></li>
+					<li><p><span class="colored_header_pvk">ER 1 and FILTER 2</span> - CV  controls.</p></li>
+					<li><p>switches to control two filters and CV at the same time with one slice knob.</p></li>
+					<li><p>/HARD cutoff control</p></li>
+				</ul>
+			</div>
+			<div class="pf3_specs">
+				<ul>
+					<li><p><span class="colored_header_pvk">Input audio signal level</span>:  Max 1.5 V</p></li>
+					<li><p><span class="colored_header_pvk">Modulation CV input</span>:  - 5 to +5 V or 0 to + 10V</p></li>
+					<li><p><span class="colored_header_pvk">Power supply</span>: universal mains adapter 100-220V / 12V 1A out</p></li>
+					<li><p><span class="colored_header_pvk">Filter weight</span>: 0,7kg</p></li>
+					<li><p><span class="colored_header_pvk">Packed weight</span>: 1 kg</p></li>
+					<li><p><span class="colored_header_pvk">Dimensions</span>: 175x135x50mm</p></li>
+				</ul>
+			</div>
 		</section>
 	</div>
 

@@ -1,6 +1,7 @@
 <script>
 	import Header from './components/Header/Header.svelte';
 	import './main.sass'
+	import Footer from "./components/Footer/Footer.svelte";
 </script>
 
 <svelte:head>
@@ -14,6 +15,5 @@
 		<slot />
 	</main>
 
-	<footer>
-	</footer>
+	<Footer />
 </div>
