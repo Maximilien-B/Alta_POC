@@ -9,6 +9,7 @@
 </svelte:head>
 
 <div class="app">
+	<div class="paper_bg"></div>
 	<Header />
 
 	<main>

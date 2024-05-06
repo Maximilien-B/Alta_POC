@@ -1,11 +1,14 @@
 @use 'variables' as v
 
 @import "components/Header/header", "page", "components/Footer/footer"
-
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap')
 @font-face
   font-family: "contm"
   src: local('Continuum Medium'), local('Continuum Medium'), url("$lib/fonts/webfonts_Continuum-Medium/Continuum-Medium.ttf.woff") format('woff')
 
+@font-face
+  font-family: "karu"
+  src: local('karu'), local('karu'), url("$lib/fonts/karu-font-family/Karu/karu-extralight.ttf") format('ttf')
 p
   font-family: 'contm', serif
   letter-spacing: 2px
@@ -23,13 +26,34 @@ a
   
 body
   position: relative
+  -ms-overflow-style: none
+  scrollbar-width: none
+  ::-webkit-scrollbar
+    display: none
 
-
+.paper_bg
+  position: absolute
+  z-index: -200
+  background-image: url('$lib/images/paper-texture.jpg')
+  background-size: cover
+  background-position: center
+  height: 100%
+  width: 100%
+  opacity: 0.5
 
 .app
   position: relative
+  -ms-overflow-style: none
+  scrollbar-width: none
+  ::-webkit-scrollbar
+    display: none
+
 *
   user-select: none
+  -ms-overflow-style: none
+  scrollbar-width: none
+  ::-webkit-scrollbar
+    display: none
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

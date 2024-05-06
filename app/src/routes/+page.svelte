@@ -1,5 +1,27 @@
 <script>
+	function fadeOnScrollDown(node) {
+		const observer = new IntersectionObserver(entries => {
+			for (var entry of entries) {
+				if (entry.isIntersecting && entry.intersectionRatio > 0) {
+					// Check if user is scrolling down
+					if (entry.boundingClientRect.top > entry.rootBounds.top) {
+						console.log("seen!")
+						node.style.transition = 'opacity 0.5s';
+						node.style.opacity = '1';
+						observer.unobserve(node);
+					}
+				}
+			}
+		}, { threshold: 0.5 }); // Adjust threshold as needed
 
+		observer.observe(node);
+
+		return {
+			destroy() {
+				observer.disconnect();
+			}
+		};
+	}
 </script>
 
 <svelte:head>
@@ -7,11 +29,8 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-	<div class="page" on:scroll={(e) => {
-		console.log("scrolled uwu")
-		console.log(e)
-	}}>
+<section >
+	<div class="page" >
 		<section class="header_pvk">
 			<h1><span class="colored_header_pvk">PF1</span>. Polyvoks</h1>
 			<p>A double-stereo filter.</p>
@@ -31,7 +50,9 @@
 				</svg>
 				<div></div>
 			</div>
+
 		</section>
+		<div id="bg"></div>
 		<section class="paragraph_container">
 			<h1><span class="colored_header_pvk">the classic Soviet filter</span></h1>
 			<p>POLIVOKS PF3 double-stereo filter utilizes the classic Soviet filter chip for a unique and iconic filter tone.  Two independent 12dB multi-mode filters that can be controlled by a single cutoff knob. Turning the filter into a 24dB filter, when connected in series. When connected in stereo, you can achieve interesting effects by using different modes to each channel. A noise generator is on board pre-filter and can be used separately as a source of white and pink noise. Volume as well as clean and processed signal balance per channel. Can be used as two independent filters or stereo mode.</p>
@@ -44,7 +65,7 @@
 			</div>
 			<div class="right_prgph_container img_container"></div>
 		</section>
-		<section class="paragraph_container">
+		<section class="paragraph_container" use:fadeOnScrollDown>
 			<h1><span class="colored_header_pvk">Warning!</span></h1>
 			<p>Before using the device, turn it on for 5-7 minutes and let it stand. The control transistor should warm up. So that in SOFT mode there is no feedback when the FREQ knobs are in zero position. If you overdo it. The UD1208 chips used in the filter are very sensitive and are never the same. Therefore you will not mathematically get two identical filters. Which is an advantage when using the unit in stereo. </p>
 		</section>
@@ -56,7 +77,8 @@
 				</p>
 			</div>
 		</section>
-		<section class="spec_header">
+		<section
+				class="spec_header">
 			<h1><span class="colored_header_pvk">Specifications</span></h1>
 		</section>
 		<section class="specs_container">
