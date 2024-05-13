@@ -3,17 +3,13 @@
 		const observer = new IntersectionObserver(entries => {
 			for (var entry of entries) {
 				if (entry.isIntersecting && entry.intersectionRatio > 0) {
-					// Check if user is scrolling down
 					if (entry.boundingClientRect.top > entry.rootBounds.top) {
-						console.log("seen!")
-						node.style.transition = 'opacity 0.5s';
 						node.style.opacity = '1';
 						observer.unobserve(node);
 					}
 				}
 			}
-		}, { threshold: 0.5 }); // Adjust threshold as needed
-
+		}, { threshold: 0.5 });
 		observer.observe(node);
 
 		return {
@@ -35,7 +31,7 @@
 			<h1><span class="colored_header_pvk">PF1</span>. Polyvoks</h1>
 			<p>A double-stereo filter.</p>
 		</section>
-		<section class="presentation_video">
+		<section class="presentation_video" use:fadeOnScrollDown>
 			<div class="dark-filter"></div>
 			<div class="sci-fi-bg"></div>
 			<div class="top_left_deco">
@@ -53,35 +49,35 @@
 
 		</section>
 		<div id="bg"></div>
-		<section class="paragraph_container">
+		<section class="paragraph_container" use:fadeOnScrollDown>
 			<h1><span class="colored_header_pvk">the classic Soviet filter</span></h1>
 			<p>POLIVOKS PF3 double-stereo filter utilizes the classic Soviet filter chip for a unique and iconic filter tone.  Two independent 12dB multi-mode filters that can be controlled by a single cutoff knob. Turning the filter into a 24dB filter, when connected in series. When connected in stereo, you can achieve interesting effects by using different modes to each channel. A noise generator is on board pre-filter and can be used separately as a source of white and pink noise. Volume as well as clean and processed signal balance per channel. Can be used as two independent filters or stereo mode.</p>
 		</section>
-		<section class="double_paragraph">
+		<section class="double_paragraph" use:fadeOnScrollDown>
 			<div class="left_prgph_container">
 				<p>
 					From ethereal drones to pulsating rhythms, the PF3 invites you on a journey of sonic exploration like no other. Its intuitive interface beckons you to dive deep into a world of modulation and harmonics, where every twist of a knob unveils a new sonic landscape. Whether you're a seasoned musician or an aspiring producer, the Polyvox PF3 promises to ignite your imagination and elevate your sound to unprecedented heights. Brace yourself for an auditory adventure that will astonish and inspire.
 				</p>
 			</div>
-			<div class="right_prgph_container img_container"></div>
+			<div class="right_prgph_container img_container"  id="pf-img1"></div>
 		</section>
 		<section class="paragraph_container" use:fadeOnScrollDown>
 			<h1><span class="colored_header_pvk">Warning!</span></h1>
 			<p>Before using the device, turn it on for 5-7 minutes and let it stand. The control transistor should warm up. So that in SOFT mode there is no feedback when the FREQ knobs are in zero position. If you overdo it. The UD1208 chips used in the filter are very sensitive and are never the same. Therefore you will not mathematically get two identical filters. Which is an advantage when using the unit in stereo. </p>
 		</section>
-		<section class="double_paragraph">
-			<div class="left_prgph_container img_container"></div>
+		<section class="double_paragraph" use:fadeOnScrollDown>
+			<div class="left_prgph_container img_container" id="pf-img2"></div>
 			<div class="right_prgph_container">
 				<p>
 					available in three stylish colors, this sleek synth offers musicians and producers a versatile tool for sonic exploration. Choose from classic black, maize yellow, dark grey or minimalist white to suit your aesthetic preferences. With its compact design and captivating hues, the Polyvox PF3 adds a touch of sophistication to any studio setup or live performance.
 				</p>
 			</div>
 		</section>
-		<section
+		<section use:fadeOnScrollDown
 				class="spec_header">
 			<h1><span class="colored_header_pvk">Specifications</span></h1>
 		</section>
-		<section class="specs_container">
+		<section class="specs_container" use:fadeOnScrollDown>
 			<div class="pf3_options">
 				<ul>
 					<li><p><span class="colored_header_pvk">ER modes</span> - Lowpass, Bandpass, Hi-pass, Notch.</p></li>

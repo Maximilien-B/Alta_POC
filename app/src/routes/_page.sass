@@ -24,6 +24,8 @@
     color: black
     opacity: 80%
     letter-spacing: 1px
+  h1
+    font-weight: 700
   section
     margin-bottom: v.$default-size
     h1
@@ -37,10 +39,12 @@
   color: v.$tertiary-color
 
 .presentation_video
-  height: v.$large-size * 5
+  height: v.$large-size * 7
   width: 100%
   position: relative
   overflow: hidden
+  transition: all 1s 0.3s ease
+  opacity: 0
 
 
 .sci-fi-bg
@@ -108,18 +112,22 @@
 .paragraph_container
   padding-left: v.$large-size * 3
   padding-right: v.$large-size * 3
+  transition: all 1s 0.3s ease
+  opacity: 0
 
 .double_paragraph
   position: relative
   height: v.$large-size * 4
   margin-left: v.$large-size * 2
   margin-right: v.$large-size * 2
+  transition: all 1s 0.3s ease
+  opacity: 0
 
 .left_prgph_container
   position: absolute
   left: 0
   top: 0
-  width: 50%
+  width: 70%
   height: 100%
   p
     height: 100%
@@ -128,7 +136,7 @@
   position: absolute
   right: 0
   top: 0
-  width: 50%
+  width: 30%
   height: 100%
   p
     height: 100%
@@ -136,12 +144,26 @@
 .img_container
   background-color: v.$main-color
 
+#pf-img1
+  background-image: url('$lib/images/synth2.png')
+  background-size: cover
+  background-position: center
+  -webkit-transform: scaleX(-1)
+  transform: scaleX(-1)
+
+#pf-img2
+  background-image: url('$lib/images/sideview_blurred.png')
+  background-size: cover
+  background-position: center
+
 .specs_container
   display: flex
   gap: v.$default-size
   height: v.$large-size * 4
   margin-left: v.$large-size * 2
   margin-right: v.$large-size * 2
+  transition: all 1s 0.3s ease
+  opacity: 0
   li
     margin-bottom: 0.75em
 
@@ -157,6 +179,9 @@
   border-bottom: solid black 1px
   margin-left: v.$large-size * 4
   margin-right: v.$large-size * 4
+  transition: all 1s 0.3s ease
+  opacity: 0
 
 .pf3_specs
   width: 50%
+
