@@ -11,7 +11,7 @@
   z-index: -100
   top: 50vh
   right: -40vw
-  filter: opacity(0.1)
+  filter: opacity(0.05)
 
 .page
   width: 100%
@@ -24,8 +24,10 @@
     color: black
     opacity: 80%
     letter-spacing: 1px
+  h1
+    font-weight: 700
   section
-    margin-bottom: v.$default-size
+    margin-bottom: v.$default-size * 2
     h1
       margin-bottom: 0.2em
 
@@ -37,10 +39,13 @@
   color: v.$tertiary-color
 
 .presentation_video
-  height: v.$large-size * 5
+  height: v.$large-size * 7
   width: 100%
   position: relative
   overflow: hidden
+  transition: all 1s 0.3s ease
+  opacity: 0
+
 
 
 .sci-fi-bg
@@ -108,33 +113,54 @@
 .paragraph_container
   padding-left: v.$large-size * 3
   padding-right: v.$large-size * 3
+  transition: all 1s 0.3s ease
+  opacity: 0
 
 .double_paragraph
+  display: flex
   position: relative
-  height: v.$large-size * 4
-  margin-left: v.$large-size * 2
-  margin-right: v.$large-size * 2
-
-.left_prgph_container
-  position: absolute
-  left: 0
-  top: 0
-  width: 50%
-  height: 100%
-  p
-    height: 100%
-
-.right_prgph_container
-  position: absolute
-  right: 0
-  top: 0
-  width: 50%
-  height: 100%
-  p
-    height: 100%
-
-.img_container
+  justify-content: stretch
+  height: 7 * v.$default-size
+  transition: all 1s 0.3s ease
+  opacity: 0
   background-color: v.$main-color
+  overflow: hidden
+
+.text_prgph_container
+  flex-grow: 1
+  box-sizing: content-box
+  padding: v.$default-size
+  display: flex
+  align-items: center
+  justify-content: center
+
+  p
+    text-overflow: clip
+    color: v.$secondary-color
+    text-justify: inter-character
+    box-sizing: content-box
+    font-size: v.$default-font-size * 1.25
+    text-align: center
+    vertical-align: center
+    filter: opacity(0.85)
+
+#pf-img1
+  background-image: url('$lib/images/synth2.png')
+
+.section_img_bg
+  position: absolute
+  width: 100%
+  height: 200%
+  background-size: cover
+  background-position: center
+  z-index: -1
+  transform: translateZ(0)
+  opacity: 0.45
+  filter: grayscale(0.5) brightness(1.1)
+
+#pf-img2
+  background-image: url('$lib/images/sideview_blurred.png')
+  height: 100%
 
 .specs_container
   display: flex
@@ -142,6 +168,8 @@
   height: v.$large-size * 4
   margin-left: v.$large-size * 2
   margin-right: v.$large-size * 2
+  transition: all 1s 0.3s ease
+  opacity: 0
   li
     margin-bottom: 0.75em
 
@@ -157,6 +185,12 @@
   border-bottom: solid black 1px
   margin-left: v.$large-size * 4
   margin-right: v.$large-size * 4
+  transition: all 1s 0.3s ease
+  opacity: 0
 
 .pf3_specs
   width: 50%
+
+@media only screen and (max-device-width: 1366px)
+.parallax
+  background-attachment: scroll
