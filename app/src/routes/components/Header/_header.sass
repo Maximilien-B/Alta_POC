@@ -3,6 +3,7 @@ header
   position: sticky
   top: 0
   z-index: 10
+  transform: translateY(-1px)
 .header_menu
   display: flex
   justify-content: space-between
@@ -123,6 +124,7 @@ header
   height: 100%
   width: v.$default-size * 2
   color: v.$secondary-color
+  gap: v.$small-size
 
   svg
     height: v.$small-size
@@ -130,3 +132,46 @@ header
 
 .active_page
   color: v.$tertiary-color
+
+#burger_header
+  display: none
+
+@media (min-width: 0px) and (max-width: 699px)
+  .header_links
+    display: none
+  #burger_header
+    display: block
+  .header_menu
+    justify-content: right
+  .header_container
+    height: v.$large-size * 0.8
+  .header_logo
+    p
+      font-size: v.$large-font-size * 0.6
+      span
+        font-size: v.$large-font-size * 0.8
+
+
+//tablet
+@media (min-width: 700px) and (max-width: 799px)
+  .header_links
+    gap: 0
+    p
+      font-size: v.$small-font-size * 1.2
+
+@media (min-width: 800px) and (max-width: 1199px)
+  .header_links
+    gap: 0
+    p
+      font-size: v.$default-font-size
+
+
+
+//laptops
+@media (min-width: 1200px) and (max-width: 1799px)
+  .header_links
+    gap: 0
+//extra large To do ?
+@media (min-width: 1800px)
+  .header_links
+    gap: v.$small-size

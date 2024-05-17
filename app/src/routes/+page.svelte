@@ -1,9 +1,10 @@
 <script>
+	import ThreeDViewer from "./components/3DViewer/ThreeDViewer.svelte";
 	function fadeOnScrollDown(node) {
 		const observer = new IntersectionObserver(entries => {
 			for (var entry of entries) {
 				if (entry.isIntersecting && entry.intersectionRatio > 0) {
-					if (entry.boundingClientRect.top > entry.rootBounds.top) {
+					if (entry.boundingClientRect.top > entry.rootBounds.top || entry.boundingClientRect.bottom < entry.rootBounds.bottom) {
 						node.style.opacity = '1';
 						node.style.transform = 'translateY(-10px)';
 						observer.unobserve(node);
@@ -54,10 +55,10 @@
 			<h1><span class="colored_header_pvk">the classic Soviet filter</span></h1>
 			<p>POLIVOKS PF3 double-stereo filter utilizes the classic Soviet filter chip for a unique and iconic filter tone.  Two independent 12dB multi-mode filters that can be controlled by a single cutoff knob. Turning the filter into a 24dB filter, when connected in series. When connected in stereo, you can achieve interesting effects by using different modes to each channel. A noise generator is on board pre-filter and can be used separately as a source of white and pink noise. Volume as well as clean and processed signal balance per channel. Can be used as two independent filters or stereo mode.</p>
 		</section>
-		<section class="double_paragraph" use:fadeOnScrollDown>
+		<section class="double_paragraph" id="cp-2" use:fadeOnScrollDown>
 			<div class="text_prgph_container">
 				<p use:fadeOnScrollDown>
-					From ethereal drones to pulsating rhythms, the <span class="colored_header_pvk">PF3</span> invites you on a journey of sonic exploration like no other. Its intuitive interface beckons you to dive deep into a world of modulation and harmonics, where every twist of a knob unveils a new sonic landscape. Whether you're a seasoned musician or an aspiring producer, the <span class="colored_header_pvk">Polyvox PF3</span> promises to ignite your imagination and elevate your sound to unprecedented heights. Brace yourself for an auditory adventure that will <span class="colored_header_pvk">astonish</span> and <span class="colored_header_pvk">inspire</span>.
+					From ethereal drones to pulsating rhythms, the <span class="colored_header_pvk">PF3</span> invites you on a journey of sonic exploration like no other. Its intuitive interface beckons you to dive deep into a world of modulation and harmonics. Whether you're a seasoned musician or an aspiring producer, the <span class="colored_header_pvk">Polyvox PF3</span> promises to ignite your imagination and elevate your sound to unprecedented heights. Brace yourself for an auditory adventure that will <span class="colored_header_pvk">astonish</span> and <span class="colored_header_pvk">inspire</span>.
 				</p>
 			</div>
 			<div id="pf-img1" class="section_img_bg"></div>
@@ -66,7 +67,7 @@
 			<h1><span class="colored_header_pvk">Warning!</span></h1>
 			<p>Before using the device, turn it on for 5-7 minutes and let it stand. The control transistor should warm up. So that in SOFT mode there is no feedback when the FREQ knobs are in zero position. If you overdo it. The UD1208 chips used in the filter are very sensitive and are never the same. Therefore you will not mathematically get two identical filters. Which is an advantage when using the unit in stereo. </p>
 		</section>
-		<section class="double_paragraph" use:fadeOnScrollDown>
+		<section class="double_paragraph" id="cp-1" use:fadeOnScrollDown>
 			<div class="text_prgph_container">
 				<p>
 					available in <span class="colored_header_pvk">three</span> stylish <span class="colored_header_pvk">colors</span>, this sleek synth offers musicians and producers a versatile tool for sonic exploration. Choose from classic <span class="colored_header_pvk">black</span>, <span class="colored_header_pvk">maize yellow</span>, <span class="colored_header_pvk">dark grey</span> or minimalist <span class="colored_header_pvk">white</span> to suit your aesthetic preferences. With its compact design and captivating hues, the Polyvox PF3 adds a touch of sophistication to any studio setup or live performance.
@@ -98,6 +99,9 @@
 					<li><p><span class="colored_header_pvk">Dimensions</span>: 175x135x50mm</p></li>
 				</ul>
 			</div>
+		</section>
+		<section class="viewer" use:fadeOnScrollDown>
+			<ThreeDViewer ModelPath="src/lib/models/the_utah_teapot.glb"/>
 		</section>
 	</div>
 

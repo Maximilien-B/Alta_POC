@@ -2,21 +2,25 @@
 
 #bg
   background-image: url('$lib/images/bg.svg')
-  background-repeat: no-repeat
+  background-repeat: repeat-y
   background-size: cover
+  background-position: 50%
   position: absolute
   box-sizing: content-box
-  height: 200vh
-  width: 150vw
+  height: 100%
+  width: 100%
+  overflow: hidden
   z-index: -100
-  top: 50vh
-  right: -40vw
+  top: 25vh
   filter: opacity(0.05)
 
 .page
   width: 100%
   position: relative
   margin-top: v.$default-size
+  display: flex
+  flex-direction: column
+  align-items: center
   p
     font-family: 'Exo', serif
     font-weight: 500
@@ -33,7 +37,8 @@
 
 
 .header_pvk
-  margin-left: v.$default-size
+  padding-left: v.$default-size
+  width: 100%
 
 .colored_header_pvk
   color: v.$tertiary-color
@@ -86,6 +91,7 @@
   svg
     height: v.$default-size
     color: v.$secondary-color
+    transform: translateX(-1px)
 
 .bottom_right_deco
   position: absolute
@@ -107,7 +113,7 @@
     height: v.$default-size
     color: v.$secondary-color
     -webkit-transform: scaleY(-1)
-    transform: scaleY(-1)
+    transform: scaleY(-1) translateX(1px)
 
 
 .paragraph_container
@@ -115,15 +121,15 @@
   padding-right: v.$large-size * 3
   transition: all 1s 0.3s ease
   opacity: 0
+  box-sizing: content-box
 
 .double_paragraph
   display: flex
   position: relative
   justify-content: stretch
-  height: 7 * v.$default-size
+  min-height: 8 * v.$default-size
   transition: all 1s 0.3s ease
   opacity: 0
-  background-color: v.$main-color
   overflow: hidden
 
 .text_prgph_container
@@ -133,7 +139,6 @@
   display: flex
   align-items: center
   justify-content: center
-
   p
     text-overflow: clip
     color: v.$secondary-color
@@ -142,30 +147,35 @@
     font-size: v.$default-font-size * 1.25
     text-align: center
     vertical-align: center
-    filter: opacity(0.85)
 
+
+#cp-1
+  clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 90%, 0% 50%)
+#cp-2
+  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%, 0% 50%)
 #pf-img1
   background-image: url('$lib/images/synth2.png')
+
 
 .section_img_bg
   position: absolute
   width: 100%
-  height: 200%
+  height: 100%
   background-size: cover
   background-position: center
   z-index: -1
   transform: translateZ(0)
-  opacity: 0.45
-  filter: grayscale(0.5) brightness(1.1)
+  filter: grayscale(0.5) brightness(0.3)
 
 #pf-img2
   background-image: url('$lib/images/sideview_blurred.png')
   height: 100%
 
+
 .specs_container
   display: flex
   gap: v.$default-size
-  height: v.$large-size * 4
+  min-height: v.$large-size * 3
   margin-left: v.$large-size * 2
   margin-right: v.$large-size * 2
   transition: all 1s 0.3s ease
@@ -181,7 +191,7 @@
   justify-content: center
   align-items: center
   height: v.$large-size
-  padding-bottom: v.$large-size - 2em
+  padding-bottom: v.$large-size - 2rem
   border-bottom: solid black 1px
   margin-left: v.$large-size * 4
   margin-right: v.$large-size * 4
@@ -191,6 +201,71 @@
 .pf3_specs
   width: 50%
 
-@media only screen and (max-device-width: 1366px)
-.parallax
-  background-attachment: scroll
+.viewer
+  height: 8 * v.$default-size
+  width: 80%
+  overflow: hidden
+  border: solid v.$main-color 0.1em
+  border-radius: v.$small-font-size * 2
+
+// phone
+@media (min-width: 0px) and (max-width: 600px)
+  .viewer
+    width: 90%
+    height: 6 * v.$default-size
+  .paragraph_container
+    padding-left: 1em
+    padding-right: 1em
+    margin-left: 0.1em
+  .pf3_specs
+    width: 75%
+  .pf3_options
+    width: 75%
+  .spec_header
+    margin: 0
+    padding: 0
+    border: none
+  .specs_container
+    margin-left: 0
+    margin-right: 0
+    align-items: center
+    flex-direction: column
+  .text_prgph_container
+    padding-top: 4em
+    padding-bottom: 4em
+    padding-left: 1em
+    padding-right: 1em
+  .top_left_deco
+    div
+      width: v.$default-size
+  .bottom_right_deco
+    div
+      width: v.$default-size
+  #bg
+    display: none
+  .page
+    h1
+      font-size: v.$default-size * 0.5
+
+
+//tablet
+@media (min-width: 600px) and (max-width: 1199px)
+  .paragraph_container
+    padding-left: v.$large-size * 1
+    padding-right: v.$large-size * 1
+  .specs_container
+    margin-left: v.$large-size * 1
+    margin-right: v.$large-size * 1
+  #bg
+    background-position: 40% 20%
+
+//laptops
+@media (min-width: 1200px) and (max-width: 1799px)
+  .paragraph_container
+    padding-left: v.$large-size * 2
+    padding-right: v.$large-size * 2
+//extra large To do ?
+@media (min-width: 1800px)
+  .paragraph_container
+    padding-left: v.$large-size * 3
+    padding-right: v.$large-size * 3

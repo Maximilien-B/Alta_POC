@@ -1,7 +1,12 @@
 @use 'variables' as v
 
-@import "components/Header/header", "page", "components/Footer/footer"
+@import "components/Header/header", "page", "components/Footer/footer", "components/3DViewer/threedviewer"
+
+
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap')
+
+
 @font-face
   font-family: "contm"
   src: local('Continuum Medium'), local('Continuum Medium'), url("$lib/fonts/webfonts_Continuum-Medium/Continuum-Medium.ttf.woff") format('woff')
@@ -12,20 +17,51 @@
 p
   font-family: 'contm', serif
   letter-spacing: 2px
-  font-size: v.$default-font-size
+
+
+// phone
+@media (min-width: 0) and (max-width: 599px)
+  p
+    font-size: v.$default-font-size * 0.9
+    text-autospace: punctuation
+    font-family: "lato", sans-serif
+    text-align: justify
+    word-break: break-word
+
+  h1
+    font-size: v.$huge-font-size * 2
+//tablet
+@media (min-width: 600px) and (max-width: 1199px)
+  p
+    font-size: v.$default-font-size * 0.9
+  h1
+    font-size: v.$huge-font-size * 1.1
+//laptops
+@media (min-width: 1200px) and (max-width: 1799px)
+  p
+    font-size: v.$default-font-size * 1.2
+  h1
+    font-size: v.$huge-font-size * 1.2
+//extra large To do ?
+@media (min-width: 1800px)
+  p
+    font-size: v.$default-font-size * 1.4
+  h1
+    font-size: v.$huge-font-size * 1.4
+
 
 h1
   font-family: 'contm', serif
   letter-spacing: 2px
-  font-size: v.$huge-font-size
 
 a
   font-family: 'Danley', serif
   letter-spacing: 2px
   font-size: v.$default-font-size
-  
+
+
 body
-  position: relative
+  position : sticky
   -ms-overflow-style: none
   scrollbar-width: none
   ::-webkit-scrollbar
@@ -50,6 +86,7 @@ body
 
 *
   user-select: none
+  box-sizing: border-box
   -ms-overflow-style: none
   scrollbar-width: none
   ::-webkit-scrollbar
