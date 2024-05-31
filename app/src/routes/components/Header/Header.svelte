@@ -1,14 +1,25 @@
 <script>
     import header_data from './data/header_data.json'
     import { base } from '$app/paths'
+    import {onMount} from "svelte";
 
     let active = 0 // to set
     let data = header_data
     let heights = new Array(data.links.length).fill(0)
+    let previousScrollY = 0;
+    let isScrollingDown = false;
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        isScrollingDown = currentScrollY > previousScrollY;
+        previousScrollY = currentScrollY;
+    }
+    onMount(() => {
+        window.addEventListener('scroll', handleScroll);
+    })
 
-</script>
+</script >
 
-<header>
+<header class:hidden={isScrollingDown}>
     <div class="header_container">
         <div class="header_logo">
 

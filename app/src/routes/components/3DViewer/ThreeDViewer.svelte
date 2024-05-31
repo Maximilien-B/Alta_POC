@@ -36,11 +36,11 @@
         controls.minPolarAngle = Math.PI / 2;
         controls.maxPolarAngle = Math.PI / 2;
 
-        const light1 = new THREE.DirectionalLight(0x0000ff, 1);
+        const light1 = new THREE.DirectionalLight(0xffffff, 2);
         light1.position.set(5, 5, 5).normalize();
-        const light2 = new THREE.DirectionalLight(0xff0000, 1);
+        const light2 = new THREE.DirectionalLight(0xffffff, 2);
         light2.position.set(-5, 5, 5).normalize();
-        const light3 = new THREE.DirectionalLight(0xff00ff, 0.1);
+        const light3 = new THREE.DirectionalLight(0xffffff, 2);
         light3.position.set(0, 0, -5).normalize();
         scene.add(light1);
         scene.add(light2);
@@ -52,9 +52,10 @@
             model = gltf.scene;
             scene.add(model);
             model.position.set(0, 0, 0)
-            model.translateY(-4)
-            model.scale.set(0.1,0.1,0.1)
+            model.translateY(0)
+            model.scale.set(0.05,0.05,0.05)
             camera.updateProjectionMatrix();
+            renderer.capabilities.getMaxAnisotropy()
             animate();
         }, undefined, function(error) {
             console.error(error);

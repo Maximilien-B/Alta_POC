@@ -48,10 +48,47 @@
   width: 100%
   position: relative
   overflow: hidden
-  transition: all 1s 0.3s ease
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: all 1s ease
   opacity: 0
+  box-sizing: content-box
 
+.synth_images
+  display: flex
+  justify-content: stretch
+  align-items: center
+  height: 80%
+  gap: v.$default-size
+  width: 100%
+  z-index: 2
+  box-sizing: content-box
+  padding: v.$default_size
 
+.s_img
+  flex-grow: 1
+  height: 100%
+  gap: v.$default-size
+
+.synth_1_pf
+  background-image: url('$lib/images/synth_side_view.png')
+  background-size: cover
+  background-position: center
+  transform: scale(0.6)
+  height: 130%
+
+.synth_2_pf
+  background-image: url('$lib/images/synth_front_view.png')
+  background-size: cover
+  background-position: center
+
+.synth_3_pf
+  background-image: url('$lib/images/synth_side_view_r.png')
+  background-size: cover
+  background-position: center
+  transform: scale(0.6)
+  height: 130%
 
 .sci-fi-bg
   z-index: -1
@@ -72,6 +109,86 @@
   height: 100%
   width: 100%
   background-color: rgba(0,0,0,0.9)
+
+#deco_2
+  div
+    background-color: v.$main-color
+    display: flex
+    justify-content: center
+    align-items: center
+    p
+      color: v.$secondary-color
+  svg
+    color: v.$main-color
+
+#deco_3
+  div
+    background-color: v.$main-color
+    display: flex
+    justify-content: center
+    gap: v.$small-size
+    align-items: center
+    p
+      color: v.$secondary-color
+  svg
+    color: v.$main-color
+.cb_container
+    position: relative
+
+    input[type="radio"]
+      position: absolute
+      transform: scale(1.5) translateY(-25%) translateX(-25%)
+      border: 0
+      top: 0
+      left: 0
+      opacity: 0
+      cursor: pointer
+      z-index: 3
+
+
+
+#cb_1
+  background-color: goldenrod
+  position: relative
+
+
+input[class="first_cb"]:hover + #cb_1,
+input[class="first_cb"]:checked + #cb_1,
+input[class="first_cb"]:focus + #cb_1
+  border: solid 3px goldenrod
+  background-color: black
+  padding: 5px
+
+input[class="second_cb"]:hover + #cb_2,
+input[class="second_cb"]:checked + #cb_2,
+input[class="second_cb"]:focus + #cb_2
+  border: solid 3px #c7d1d1
+  background-color: black
+  padding: 5px
+
+input[class="third_cb"]:hover + #cb_3,
+input[class="third_cb"]:checked + #cb_3,
+input[class="third_cb"]:focus + #cb_3
+  border: solid 3px v.$secondary-color
+  padding: 5px
+  background-color: black
+
+#cb_2
+  background-color: #c7d1d1
+
+#cb_3
+  background-color: v.$secondary-color
+
+
+
+.checkmark
+  background-color: v.$secondary-color
+  width: v.$small-size * 0.6
+  height: v.$small-size * 0.6
+  border-radius: 50%
+  display: block
+  transition: all 0.3s linear
+
 
 
 .top_left_deco
@@ -119,7 +236,7 @@
 .paragraph_container
   padding-left: v.$large-size * 3
   padding-right: v.$large-size * 3
-  transition: all 1s 0.3s ease
+  transition: all 1s ease
   opacity: 0
   box-sizing: content-box
 
@@ -128,9 +245,10 @@
   position: relative
   justify-content: stretch
   min-height: 8 * v.$default-size
-  transition: all 1s 0.3s ease
+  transition: all 1s ease
   opacity: 0
   overflow: hidden
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%)
 
 .text_prgph_container
   flex-grow: 1
@@ -149,10 +267,7 @@
     vertical-align: center
 
 
-#cp-1
-  clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 90%, 0% 50%)
-#cp-2
-  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%, 0% 50%)
+
 #pf-img1
   background-image: url('$lib/images/synth2.png')
 
@@ -178,7 +293,7 @@
   min-height: v.$large-size * 3
   margin-left: v.$large-size * 2
   margin-right: v.$large-size * 2
-  transition: all 1s 0.3s ease
+  transition: all 1s ease
   opacity: 0
   li
     margin-bottom: 0.75em
@@ -195,7 +310,7 @@
   border-bottom: solid black 1px
   margin-left: v.$large-size * 4
   margin-right: v.$large-size * 4
-  transition: all 1s 0.3s ease
+  transition: all 1s ease
   opacity: 0
 
 .pf3_specs
@@ -203,10 +318,11 @@
 
 .viewer
   height: 8 * v.$default-size
+  position: relative
   width: 80%
   overflow: hidden
-  border: solid v.$main-color 0.1em
   border-radius: v.$small-font-size * 2
+  background-color: rgba(0,0,0,0.05)
 
 // phone
 @media (min-width: 0px) and (max-width: 600px)
@@ -235,6 +351,8 @@
     padding-bottom: 4em
     padding-left: 1em
     padding-right: 1em
+    p
+      font-size: v.$default-font-size * 1.1
   .top_left_deco
     div
       width: v.$default-size
@@ -246,6 +364,22 @@
   .page
     h1
       font-size: v.$default-size * 0.5
+    section
+      margin-bottom: v.$default-size
+  .synth_1_pf
+    display: none
+  .synth_3_pf
+    display: none
+  .header_pvk
+    padding-left: v.$small-size
+  .presentation_video
+    height: 5 * v.$default-size
+  #deco_2
+    div
+      width: v.$default-size * 3
+  #deco_3
+    div
+      width: v.$default-size * 3
 
 
 //tablet
@@ -257,7 +391,12 @@
     margin-left: v.$large-size * 1
     margin-right: v.$large-size * 1
   #bg
-    background-position: 40% 20%
+    background-position: 50% 20%
+  .synth_2_pf
+    display: none
+  .synth_images
+    padding: 0
+    height: 80%
 
 //laptops
 @media (min-width: 1200px) and (max-width: 1799px)

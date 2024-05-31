@@ -36,6 +36,11 @@
 		</section>
 		<section class="presentation_video" use:fadeOnScrollDown>
 			<div class="dark-filter"></div>
+			<div class="synth_images">
+				<div class="synth_1_pf s_img"></div>
+				<div class="synth_2_pf s_img"></div>
+				<div class="synth_3_pf s_img"></div>
+			</div>
 			<div class="sci-fi-bg"></div>
 			<div class="top_left_deco">
 				<div></div>
@@ -102,7 +107,32 @@
 			</div>
 		</section>
 		<section class="viewer" use:fadeOnScrollDown>
-			<ThreeDViewer ModelPath="{base}/models/the_utah_teapot.glb"/>
+			<div class="top_left_deco" id="deco_2">
+				<div><p>Polyvoks | PF3</p></div>
+				<svg viewBox="0 0 2 3" aria-hidden="true" fill="currentColor">
+					<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+				</svg>
+			</div>
+			<div class="bottom_right_deco" id="deco_3">
+				<svg viewBox="0 0 2 3" aria-hidden="true" fill="currentColor">
+					<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+				</svg>
+				<div>
+					<label class="cb_container">
+						<input type="radio" checked="checked" name="radio" class="first_cb">
+						<span class="checkmark" id="cb_1"></span>
+					</label>
+					<label class="cb_container">
+						<input type="radio" name="radio" class="second_cb">
+						<span class="checkmark" id="cb_2"></span>
+					</label>
+					<label class="cb_container">
+						<input type="radio" name="radio" class="third_cb">
+						<span class="checkmark" id="cb_3"></span>
+					</label>
+				</div>
+			</div>
+			<ThreeDViewer ModelPath="src/lib/models/scene.glb"/>
 		</section>
 	</div>
 

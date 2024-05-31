@@ -4,6 +4,12 @@ header
   top: 0
   z-index: 10
   transform: translateY(-1px)
+  user-select: none
+  transition: transform 0.14s linear
+
+.hidden
+  transform: translateY(-100%)
+
 .header_menu
   display: flex
   justify-content: space-between
@@ -30,11 +36,11 @@ header
   text-align: center
   svg
     height: 100%
-    transform: translateX(1px)
+    transform: translateX(2px)
   p
     margin-left: v.$small-size
     span
-      font-size: v.$large-font-size
+      font-size: v.$large-font-size * 1.3
 
 
 .header_links
