@@ -1,4 +1,5 @@
 <script>
+    import { base } from '$app/paths'
 	import ThreeDViewer from "./components/3DViewer/ThreeDViewer.svelte";
 	function fadeOnScrollDown(node) {
 		const observer = new IntersectionObserver(entries => {
@@ -101,7 +102,7 @@
 			</div>
 		</section>
 		<section class="viewer" use:fadeOnScrollDown>
-			<ThreeDViewer ModelPath="src/lib/models/the_utah_teapot.glb"/>
+			<ThreeDViewer ModelPath="{base}/models/the_utah_teapot.glb"/>
 		</section>
 	</div>
 
