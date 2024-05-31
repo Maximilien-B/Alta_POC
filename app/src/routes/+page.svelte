@@ -36,6 +36,11 @@
 		</section>
 		<section class="presentation_video" use:fadeOnScrollDown>
 			<div class="dark-filter"></div>
+			<div class="synth_images">
+				<div class="synth_1_pf s_img"></div>
+				<div class="synth_2_pf s_img"></div>
+				<div class="synth_3_pf s_img"></div>
+			</div>
 			<div class="sci-fi-bg"></div>
 			<div class="top_left_deco">
 				<div></div>
@@ -102,7 +107,7 @@
 			</div>
 		</section>
 		<section class="viewer" use:fadeOnScrollDown>
-			<ThreeDViewer ModelPath="{base}/models/the_utah_teapot.glb"/>
+			<ThreeDViewer ModelPath="src/lib/models/scene.glb"/>
 		</section>
 	</div>
 

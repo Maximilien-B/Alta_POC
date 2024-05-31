@@ -48,10 +48,43 @@
   width: 100%
   position: relative
   overflow: hidden
+  display: flex
+  justify-content: center
+  align-items: center
   transition: all 1s 0.3s ease
   opacity: 0
+  box-sizing: content-box
 
+.synth_images
+  display: flex
+  justify-content: stretch
+  align-items: center
+  height: 80%
+  gap: v.$default-size
+  width: 100%
+  z-index: 2
+  box-sizing: content-box
+  padding: v.$default_size
 
+.s_img
+  flex-grow: 1
+  height: 100%
+  gap: v.$default-size
+
+.synth_1_pf
+  background-image: url('$lib/images/synth_side_view.png')
+  background-size: cover
+  background-position: center
+
+.synth_2_pf
+  background-image: url('$lib/images/synth_front_view.png')
+  background-size: cover
+  background-position: center
+
+.synth_3_pf
+  background-image: url('$lib/images/synth_side_view_r.png')
+  background-size: cover
+  background-position: center
 
 .sci-fi-bg
   z-index: -1
@@ -79,7 +112,7 @@
   top: 0
   left: 0
   height: v.$default-size
-  display: flex
+  display: none
   justify-content: center
   align-items: center
 
@@ -98,7 +131,7 @@
   bottom: 0
   right: 0
   height: v.$default-size
-  display: flex
+  display: none
   justify-content: center
   align-items: center
   transform: scaleY ( -1 )
@@ -246,6 +279,10 @@
   .page
     h1
       font-size: v.$default-size * 0.5
+  .synth_1_pf
+    display: none
+  .synth_3_pf
+    display: none
 
 
 //tablet
@@ -258,6 +295,11 @@
     margin-right: v.$large-size * 1
   #bg
     background-position: 40% 20%
+  .synth_2_pf
+    display: none
+  .synth_images
+    padding: 0
+    height: 80%
 
 //laptops
 @media (min-width: 1200px) and (max-width: 1799px)
