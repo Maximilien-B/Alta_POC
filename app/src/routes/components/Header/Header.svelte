@@ -1,5 +1,6 @@
 <script>
     import header_data from './data/header_data.json'
+    import { base } from '$app/paths'
 
     let active = 0 // to set
     let data = header_data
@@ -34,7 +35,7 @@
 
                         <div class="dropdown_content" style="height: {heights[i]}">
                             {#each content.links as link, j}
-                                <a href={link.link}><p>{link.name}</p></a>
+                                <a href={base}/{link.link}><p>{link.name}</p></a>
                             {/each}
                         </div>
                     </div>
