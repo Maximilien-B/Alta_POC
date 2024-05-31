@@ -2,22 +2,37 @@
 
 @import "components/Header/header", "page", "components/Footer/footer", "components/3DViewer/threedviewer"
 
-
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap')
 
+@font-face
+  font-family: 'Continuum'
+  font-weight: normal
+  font-style: normal
+  src: url('$lib/fonts/continuum/contm.ttf') format('truetype')
 
 @font-face
-  font-family: "contm"
-  src: local('Continuum Medium'), local('Continuum Medium'), url("$lib/fonts/webfonts_Continuum-Medium/Continuum-Medium.ttf.woff") format('woff')
+  font-family: 'Continuum'
+  font-weight: bold
+  font-style: normal
+  src: url('$lib/fonts/continuum/contb.ttf') format('truetype')
+
+@font-face
+  font-family: 'Continuum'
+  font-weight: normal
+  font-style: italic
+  src: url('$lib/fonts/continuum/conti.ttf') format('truetype')
+
+.font-continuum
+  font-family: 'Continuum', sans-serif
 
 @font-face
   font-family: "karu"
   src: local('karu'), local('karu'), url("$lib/fonts/karu-font-family/Karu/karu-extralight.ttf") format('ttf')
-p
-  font-family: 'contm', serif
-  letter-spacing: 2px
 
+p
+  @extend .font-continuum
+  letter-spacing: 2px
 
 // phone
 @media (min-width: 0) and (max-width: 599px)
@@ -49,9 +64,8 @@ p
   h1
     font-size: v.$huge-font-size * 1.4
 
-
 h1
-  font-family: 'contm', serif
+  @extend .font-continuum
   letter-spacing: 2px
 
 a
@@ -59,9 +73,8 @@ a
   letter-spacing: 2px
   font-size: v.$default-font-size
 
-
 body
-  position : sticky
+  position: sticky
   -ms-overflow-style: none
   scrollbar-width: none
   ::-webkit-scrollbar
@@ -110,9 +123,8 @@ time, mark, audio, video
   border: 0
   vertical-align: baseline
 
-
 article, aside, details, figcaption, figure,
- header, hgroup, main, menu, nav, section
+header, hgroup, main, menu, nav, section
   display: block
 
 /* HTML5 hidden-attribute fix for newer browsers */
@@ -136,4 +148,3 @@ q:before, q:after
 table
   border-collapse: collapse
   border-spacing: 0
-
