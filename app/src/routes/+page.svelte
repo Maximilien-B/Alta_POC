@@ -1,6 +1,11 @@
 <script>
     import { base } from '$app/paths'
 	import ThreeDViewer from "./components/3DViewer/ThreeDViewer.svelte";
+
+	let show_teapot = false
+	function switchModel() {
+		show_teapot = !show_teapot;
+	}
 	function fadeOnScrollDown(node) {
 		const observer = new IntersectionObserver(entries => {
 			for (var entry of entries) {
@@ -123,8 +128,8 @@
 						<span class="checkmark" id="cb_1"></span>
 					</label>
 					<label class="cb_container">
-						<input type="radio" name="radio" class="second_cb">
-						<span class="checkmark" id="cb_2"></span>
+						<input type="radio" name="radio" class="second_cb" on:click={switchModel}>
+						<span class="checkmark" id="cb_2" ></span>
 					</label>
 					<label class="cb_container">
 						<input type="radio" name="radio" class="third_cb">
@@ -132,7 +137,35 @@
 					</label>
 				</div>
 			</div>
-			<ThreeDViewer ModelPath="src/lib/models/scene.glb"/>
+			{#if show_teapot}
+				<ThreeDViewer ModelPath="{base}/models/the_utah_teapot.glb" objectVector={[0.1,0.1,0.1,-4]}/>
+			{:else}
+				<ThreeDViewer ModelPath="{base}/models/scene.glb" objectVector={[0.04,0.04,0.04,0]}/>
+			{/if}
+
+		</section>
+		<section class="buy_section">
+			<h1>Get yours <span class="colored_header_pvk">Today</span>.</h1>
+			<div class="buy_btns">
+				<div class="left_btn">
+					<div>
+
+						<p>Add to Cart</p>
+					</div>
+					<svg viewBox="0 0 2 3" aria-hidden="true" fill="currentColor">
+						<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
+					</svg>
+				</div>
+				<div class="right_btn">
+					<svg viewBox="0 0 2 3" aria-hidden="true" fill="currentColor">
+						<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
+					</svg>
+					<div>
+						<p>Order now</p>
+					</div>
+
+				</div>
+			</div>
 		</section>
 	</div>
 

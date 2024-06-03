@@ -2,6 +2,7 @@
     import * as THREE from "three";
 
     export let ModelPath
+    export let objectVector // (x,y,z) Scale, Y translation
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
     import {onMount} from "svelte";
@@ -52,8 +53,8 @@
             model = gltf.scene;
             scene.add(model);
             model.position.set(0, 0, 0)
-            model.translateY(0)
-            model.scale.set(0.05,0.05,0.05)
+            model.translateY(objectVector[3])
+            model.scale.set(objectVector[0],objectVector[1],objectVector[2])
             camera.updateProjectionMatrix();
             renderer.capabilities.getMaxAnisotropy()
             animate();
