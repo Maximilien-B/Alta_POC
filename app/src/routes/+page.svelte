@@ -128,8 +128,8 @@
 						<span class="checkmark" id="cb_1"></span>
 					</label>
 					<label class="cb_container">
-						<input type="radio" name="radio" class="second_cb" on:click={switchModel}>
-						<span class="checkmark" id="cb_2" ></span>
+						<input type="radio" name="radio" class="second_cb">
+						<span class="checkmark" id="cb_2"></span>
 					</label>
 					<label class="cb_container">
 						<input type="radio" name="radio" class="third_cb">
