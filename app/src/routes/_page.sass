@@ -7,7 +7,7 @@
   background-position: 50%
   position: absolute
   box-sizing: content-box
-  height: 100%
+  height: 80%
   width: 100%
   overflow: hidden
   z-index: -100
@@ -38,8 +38,22 @@
 
 .header_pvk
   padding-left: v.$default-size
+  padding-right: v.$default-size
   width: 100%
-
+  display: flex
+  justify-content: space-between
+  align-items: center
+  svg
+    padding: 0.3em
+    border: solid v.$main-color 2px
+    border-radius: 25%
+    height: v.$default-size
+    width: v.$default-size
+    cursor: pointer
+.dl_content
+  display: flex
+  justify-content: center
+  gap: v.$small-size
 .colored_header_pvk
   color: v.$tertiary-color
 
@@ -379,8 +393,65 @@ input[class="third_cb"]:focus + #cb_3
     transform: translateX(-1px) scaleY(-1)
     color: v.$tertiary-color
 
+
+.reviewSection
+  min-height: v.$large-size * 5
+  width: 80%
+  display: flex
+  flex-direction: column
+  gap: v.$default-size
+  align-items: center
+  position: relative
+  img, iframe
+    width: 100%
+    aspect-ratio: 18/9
+    border: solid black 1px
+    padding: 1em
+
+  img:hover
+    cursor: pointer
+.floating_loader_text
+  position: absolute
+  top: 0
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 10
+  color: v.$secondary-color
+  svg
+    height: v.$default-size * 2
+    width: v.$default-size * 2
+    padding: v.$default-size / 2
+    border-radius: 50%
+    background-color: rgba(255,255,255,0.2)
+#vid_1
+  clip-path: polygon(15% 0%, 100% 0, 100% 75%, 85% 100%, 0 100%, 0 25%)
+  transition: all 0.1s linear
+  &:hover
+    transform: scale(1.1)
+#vid_2
+  clip-path: polygon(0 0, 85% 0, 100% 25%, 100% 100%, 15% 100%, 0 75%)
+  transition: all 0.1s linear
+  &:hover
+    transform: scale(1.1)
+.YTvids
+  width: 100%
+  position: relative
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: v.$default-size
+
+.vid
+  position: relative
 // phone
 @media (min-width: 0px) and (max-width: 600px)
+  .YTvids
+    grid-template-columns: 1fr
+  .reviewSection
+    iframe, img
+      height: v.$large-size * 3
   .buy_btns
     div
       div
@@ -431,6 +502,10 @@ input[class="third_cb"]:focus + #cb_3
     display: none
   .header_pvk
     padding-left: v.$small-size
+    padding-right: v.$small-size
+    svg
+      height: v.$default-size * 0.7
+      width: v.$default-size * 0.7
   .presentation_video
     height: 5 * v.$default-size
   #deco_2
@@ -456,12 +531,20 @@ input[class="third_cb"]:focus + #cb_3
   .synth_images
     padding: 0
     height: 80%
+  .reviewSection
+    height: v.$large-size * 4
+    iframe, img
+      height: v.$large-size * 4
 
 //laptops
 @media (min-width: 1200px) and (max-width: 1799px)
   .paragraph_container
     padding-left: v.$large-size * 2
     padding-right: v.$large-size * 2
+  .reviewSection
+    height: v.$large-size * 4.5
+    iframe, img
+      height: v.$large-size * 4.5
 //extra large To do ?
 @media (min-width: 1800px)
   .paragraph_container
