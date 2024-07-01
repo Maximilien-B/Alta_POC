@@ -7,6 +7,7 @@
     import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
     import {onMount} from "svelte";
 
+    let zoomLevel = 1;
     onMount(() => {
         const container = document.getElementById('dviewer');
 
@@ -25,14 +26,16 @@
         camera.position.set(50,50,1000)
         camera.lookAt(new THREE.Vector3(0,0,0));
 
-        const renderer = new THREE.WebGLRenderer({ alpha: true});
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
         renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.shadowMap.enabled = true;
         container.appendChild(renderer.domElement);
 
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
         controls.dampingFactor = 0.05;
-        controls.enableZoom = false;
+        controls.enableZoom = true;
         controls.enablePan = false;
         controls.minPolarAngle = Math.PI / 2;
         controls.maxPolarAngle = Math.PI / 2;
@@ -72,6 +75,71 @@
             camera.updateProjectionMatrix();
             renderer.setSize(container.clientWidth, container.clientHeight);
         });
+
+        container.addEventListener('wheel', function(event) {
+            zoomLevel -= event.deltaY * 0.001;
+            zoomLevel = Math.min(Math.max(zoomLevel, 0.5), 2.5);
+            camera.zoom = zoomLevel;
+            camera.updateProjectionMatrix();
+            updateZoomUI();
+        });
+
+        document.getElementById('zoom-in').addEventListener('click', function() {
+            zoomLevel += 0.1;
+            zoomLevel = Math.min(Math.max(zoomLevel, 0.5), 2.5);
+            camera.zoom = zoomLevel;
+            camera.updateProjectionMatrix();
+            updateZoomUI();
+        });
+
+        document.getElementById('zoom-out').addEventListener('click', function() {
+            zoomLevel -= 0.1;
+            zoomLevel = Math.min(Math.max(zoomLevel, 0.5), 2.5);
+            camera.zoom = zoomLevel;
+            camera.updateProjectionMatrix();
+            updateZoomUI();
+        });
+
+        function updateZoomUI() {
+            document.getElementById('zoom-level').innerText = zoomLevel.toFixed(1);
+        }
+
+        let isPanning = false;
+        let panStart = new THREE.Vector2();
+        let panEnd = new THREE.Vector2();
+        let panDelta = new THREE.Vector2();
+
+        container.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // Prevent the default context menu from appearing
+        });
+
+        container.addEventListener('mousedown', function(event) {
+            if (event.button === 2) { // Right mouse button
+                isPanning = true;
+                panStart.set(event.clientX, event.clientY);
+            }
+        });
+
+        container.addEventListener('mousemove', function(event) {
+            if (isPanning) {
+                panEnd.set(event.clientX, event.clientY);
+                panDelta.subVectors(panEnd, panStart);
+                panStart.copy(panEnd);
+
+                const panSpeed = 0.001;
+                camera.position.x -= panDelta.x * panSpeed;
+                camera.position.y += panDelta.y * panSpeed;
+            }
+        });
+
+        container.addEventListener('mouseup', function(event) {
+            if (event.button === 2) { // Right mouse button
+                isPanning = false;
+                camera.position.set(50, 50, 1000); // Reset camera position
+                camera.lookAt(new THREE.Vector3(0, 0, 0));
+            }
+        });
+
 
         function animate() {
             requestAnimationFrame(animate);
