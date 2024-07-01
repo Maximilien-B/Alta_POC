@@ -194,8 +194,8 @@
 					{:else}
 						<img src="https://img.youtube.com/vi/MifoWuu6a98/maxresdefault.jpg" alt="YouTube Thumbnail" class="thumbnail" on:click={()=>{ clicked_vid_1 = true}}>
 						<div class="floating_loader_text" on:click={()=>{ clicked_vid_1 = true}}>
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor" viewBox="0 0 16 16" >
-								<path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52z"/>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+								<path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/>
 							</svg>
 						</div>
 					{/if}
@@ -211,8 +211,8 @@
 					{:else}
 						<img src="https://img.youtube.com/vi/T4MhAel0PoM/maxresdefault.jpg" alt="YouTube Thumbnail" class="thumbnail" on:click={()=>{ clicked_vid_2 = true}}>
 						<div class="floating_loader_text" on:click={()=>{ clicked_vid_2 = true}}>
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor" viewBox="0 0 16 16" >
-								<path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52z"/>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+								<path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/>
 							</svg>
 						</div>
 					{/if}
