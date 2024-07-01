@@ -1,3 +1,6 @@
 # Alta_POC
 Single Page Project for a proof of concept website
-test
+
+
+you can view the page here :
+https://maxb0zz.github.io/Alta_POC/
